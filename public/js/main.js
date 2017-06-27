@@ -2,16 +2,32 @@ var FoodApp = function () {
 
     var foods = [];
 
+
+    var addRecipeOptions = function(recipeName, recipeimage, ingredients, rating){
+           var food = {
+            recipeName: recipeName,
+            recipeimage: recipeimage,
+            ingredients: ingredients,
+            rating: rating
+        }
+        foods.push(food);
+        renderRecipes()
+    }
+
+
     var recipeSearch = function (text) {
+        foods = []
         $.ajax({
             method: "GET",
             url: 'http://api.yummly.com/v1/api/recipes?_app_id=06389aba&_app_key=5ac00c18990b0551a19a507887252268&q=' + [text] + '',
             success: function (data) {
-                // console.log(data.matches[1].recipeName)
                 for (var i = 0; i < data.matches.length; i++) {
-                    debugger
                  var recipeName = data.matches[i].recipeName
-                 console.log(recipeName)
+                 var recipeimage = data.matches[i].smallImageUrls[0]
+                 var ingredients = data.matches[i].ingredients
+                 var rating = data.matches[i].rating
+
+                 addRecipeOptions(recipeName, recipeimage, ingredients, rating)
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -19,6 +35,19 @@ var FoodApp = function () {
             }
         });
     };
+
+
+   var renderRecipes =  function() {
+    $('.main-row').empty();
+    var source = $('#recipe-template').html();
+    var template = Handlebars.compile(source);
+    for (var i = 0; i < foods.length; i++) {
+      var newHTML = template(foods[i]);
+      $('.main-row').append(newHTML);
+    }
+  }
+
+
 
 return {
     recipeSearch: recipeSearch
