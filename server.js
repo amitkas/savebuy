@@ -8,6 +8,8 @@ mongoose.connect('mongodb://localhost/savebuy', function () {
 
 // var Post = require('./models/postModel');
 
+
+
 var app = express();
 app.use(express.static('public'));
 app.use(express.static('node_modules'));
