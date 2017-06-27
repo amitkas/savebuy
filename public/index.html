@@ -236,13 +236,13 @@
 
     <script id="recipe-template" type="text/x-handlebars-template">
 
-            <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="col-sm-4 col-lg-4 col-md-4 recipe-inside">
                 <div class="thumbnail">
                     <img src="{{recipeimage}}" alt="">
                     <div class="caption">
-                        <h4 class="pull-right">$24.99</h4>
-                        <h4><a href="#">{{recipeName}}</a>
-                        </h4>
+                        <button class="btn btn-default add-favorite pull-right" type="btn">Add Favorite</button>
+                        <h4><a href="http://www.yummly.co/recipe/{{recipeid}}" target="_blank">{{recipeName}}</a></h4>
+                        <h4>Cooking Time: {{cookingtime}}/mins</h4>
                         <p>{{ingredients}}</p>
                     </div>
                     <div class="ratings">

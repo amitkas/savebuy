@@ -2,13 +2,19 @@ var FoodApp = function () {
 
     var foods = [];
 
+    var favRecipe = function(recipeIndex){
+        var recindex = foods[recipeIndex]
+        console.log(recindex)
+    }
 
-    var addRecipeOptions = function(recipeName, recipeimage, ingredients, rating){
+    var addRecipeOptions = function(recipeName, recipeimage, ingredients, rating, cookingtime, recipeid){
            var food = {
             recipeName: recipeName,
             recipeimage: recipeimage,
             ingredients: ingredients,
-            rating: rating
+            rating: rating,
+            cookingtime: cookingtime,
+            recipeid:recipeid
         }
         foods.push(food);
         renderRecipes()
@@ -26,8 +32,10 @@ var FoodApp = function () {
                  var recipeimage = data.matches[i].smallImageUrls[0]
                  var ingredients = data.matches[i].ingredients
                  var rating = data.matches[i].rating
+                 var cookingtime = data.matches[i].totalTimeInSeconds/60
+                 var recipeid = data.matches[i].id
 
-                 addRecipeOptions(recipeName, recipeimage, ingredients, rating)
+                 addRecipeOptions(recipeName, recipeimage, ingredients, rating, cookingtime, recipeid)
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -50,7 +58,8 @@ var FoodApp = function () {
 
 
 return {
-    recipeSearch: recipeSearch
+    recipeSearch: recipeSearch,
+    favRecipe:favRecipe
 }
 }
 
@@ -71,17 +80,13 @@ $input.on('click', '.search-recipes', function () {
 })
 
 
-//   var $comment = $(this).siblings('.comment');
-//   var $user = $(this).siblings('.name');
+var $maindisplay = $(".main-row");
 
-//   if ($comment.val() === "" || $user.val() === "") {
-//     alert("Please enter your name and a comment!");
-//     return;
-//   }
+    $maindisplay.on('click', '.add-favorite', function(){
+        debugger
+        var recipeIndex = $(this).closest('.recipe-inside').index()
+        // var recipehere2 = $(this).closest('div').closest('.recipe-inside')
+        app.favRecipe(recipeIndex)
 
-//   var postIndex = $(this).closest('.post').index();
-//   var postID= $(this).closest('div').parent('.post').data().id
+    })
 
-//   var newComment = {
-//     text: $comment.val(),
-//     user: $user.val(),
