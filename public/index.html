@@ -12,7 +12,9 @@
     <title>Shop Homepage - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
 
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
@@ -59,22 +61,24 @@
 
         <div class="row compare-row">
             <div class="col-md-12">
+
                 <div class="input-group">
                     <input type="text" class="form-control search-input" aria-label="..." placeholder="Search any product here">
                     <div class="input-group-btn">
                         <button type="button" class="btn btn-primary search-recipes">Compare!<span></span></button>
-                        <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort<span class="caret"></span></button>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
+<select class="selectpicker" multiple>
+  <option>Mustard</option>
+  <option>Ketchup</option>
+  <option>Relish</option>
+</select>
+
                     </div>
                 </div>
             </div>
         </div>
+
+
+
 
 
 
@@ -220,16 +224,17 @@
 
     </div>
     <!-- /.container -->
+    
 
     <script src='jquery/dist/jquery.js'></script>
 
     <!--//main js-->
 
     <script src="js/main.js"></script>
-    
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
