@@ -1,0 +1,19 @@
+{
+  "name": "savebuy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amazon-product-api": "^0.4.3",
+    "body-parser": "^1.17.2",
+    "ebay-api": "^1.13.1",
+    "express": "^4.15.3",
+    "handlebars": "^4.0.10",
+    "mongoose": "^4.11.0"
+  }
+}
