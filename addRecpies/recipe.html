@@ -13,6 +13,7 @@
 
     <title>New Recpies</title>
 
+    <link rel="stylesheet" href="../bower_components/bootstrap-fileinput/css/fileinput.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -74,30 +75,32 @@
                     <input type="text" class="form-control" id="recipeInstuctionsInput" placeholder="Another input">
                 </div>
                 <div class="input-group">
-                    <input type="file" class="form-control imageSourceInput">
-                    <span class="input-group-addon"></span>
+                    <!--<input type="file" class="form-control imageSourceInput">-->
+                    <!--<span class="input-group-addon"></span>-->
+                    <label class="control-label">Select File</label>
+                    <input id="input-1" type="file" class="file">
                 </div>
                 <div class="row">
-                        <button type="button" class="btn btn-success" id="submitForm">Submit</button>
+                    <button type="button" class="btn btn-success" id="submitForm">Submit</button>
                 </div>
             </form>
         </div>
     </div>
-
-
-
-
     <script src='jquery/dist/jquery.js'></script>
 
     <!--//main js-->
 
     <script src="js/recipe.js"></script>
 
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+            <script src="/bower_components/bootstrap-fileinput/js/fileinput.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
+
     <script src="js/bootstrap.min.js"></script>
+
     <script src="handlebars/dist/handlebars.js"></script>>
 
 </html>
