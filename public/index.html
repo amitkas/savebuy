@@ -56,32 +56,30 @@
         <div class="row compare-row">
             <div class="col-md-8">
                 <div class="input-group">
-                    <h3>search recipes
-                    </h3>
+                    <h3>Search Recipes</h3>
                     <input type="text" class="form-control search-input" style="width: 640px;" placeholder="Search any product here">
                     <div class="input-group-btn">
                         <button type="button" class="btn btn-primary search-recipes" style="position: absolute; bottom: 0; left:0;">Search</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-1">
-            </div>
-            <div class="col-md-3">
-                <h3>Food allergies</h3>
-                <p>
-                    <select class="selectpicker" multiple>
-                        <option id="secondSelect">Eggs</option>
-                        <option id="thirdSelect">Milk</option>
-                        <option id="forthSelect">Peanuts</option>
-                        <option id="fifthSelect">Tree nuts</option>
-                        <option id="sixthSelect">Fish</option>
-                        <option id="seventhSelect">Shellfish</option>
-                        <option id="eightSelect">Wheat</option>
-                        <option id="nineSelect">soy</option>
-                        </select>
+            <div class="col-md-4">
+                <h3>Cuisine</h3>
+                    <select id='chose-cuisine' class="selectpicker cuisine-check" multiple>
+                        <option id="italian">Italian</option>
+                        <option id="asian">Asian</option>
+                        <option id="medi">Mediterranean</option>
+                        <option id="mexican">Mexican</option>
+                        <option id="japan">Japanese </option>
+                    </select>
                 </p>
             </div>
+            <div class="col-md-12">
+                <label class="checkbox-inline"><input type="checkbox" value="">Veggie Only</label>
+                <label class="checkbox-inline"><input type="checkbox" value="">Food Allergies</label>
+            </div>
         </div>
+
 
         <div class="row main-row">
 

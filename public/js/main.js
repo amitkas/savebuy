@@ -21,11 +21,11 @@ var FoodApp = function () {
     }
 
 
-    var recipeSearch = function (text) {
+    var recipeSearch = function (text, recipetosearch) {
         foods = []
-        $.ajax({
+           $.ajax({
             method: "GET",
-            url: 'http://api.yummly.com/v1/api/recipes?_app_id=06389aba&_app_key=5ac00c18990b0551a19a507887252268&q=' + [text] + '',
+            url: 'http://api.yummly.com/v1/api/recipes?_app_id=06389aba&_app_key=5ac00c18990b0551a19a507887252268&q=' + [text] +[recipetosearch]+ '',
             success: function (data) {
                 for (var i = 0; i < data.matches.length; i++) {
                  var recipeName = data.matches[i].recipeName
@@ -66,7 +66,13 @@ return {
 
 var app = FoodApp();
 
-var $input = $(".input-group");
+var $input = $(".compare-row");
+
+$input.on('changed.bs.select', '#chose-cuisine', function (e) {
+    debugger
+    alert('hey!')
+console.log(e)
+})
 
 $input.on('click', '.search-recipes', function () {
     var $freesearch = $('.search-input');
@@ -75,8 +81,26 @@ $input.on('click', '.search-recipes', function () {
         return;
     }
     var freeSearch = ($freesearch.val())
-    app.recipeSearch(freeSearch)
+    var x = $('.dropdown-toggle').attr("title" )
+    y = x.toLowerCase().split(', ')
+    var firstcuisine = y[0];
+    var seccuisine = y[1];
+    var thirdcuisine = y[2];
+    var fourcuisine = y[3];
+    var fivecuisine = y[4];
 
+    var recipetosearchasarray = []
+
+    for (var i = 0; i < y.length; i++) {
+        if(y[i]!==undefined);{
+            var cuisinewithajax = '&allowedCuisine[]=cuisine^cuisine-'+y[i]
+            recipetosearchasarray.push(cuisinewithajax)
+        }
+    }
+    console.log(recipetosearchasarray)
+    var recipetosearch = recipetosearchasarray.join("")
+    console.log(recipetosearch)
+    app.recipeSearch(freeSearch, recipetosearch)
 })
 
 
