@@ -15,7 +15,8 @@ $(".btn-success").on('click', function () {
     var newRecipe={}
 newRecipe.recipeName=$("#recipeNameInput").val();
 newRecipe.totalTimeInSeconds=$("#cookingTimeInput").val();
-newRecipe.cuisine=newCuisine;
+// newRecipe.cuisine=newCuisine;
+newRecipe.cuisine='mexican';
 newRecipe.ingredients=$("#recipeInstuctionsInput").val();
 newRecipe.imageAddress=$("#imageSourceInput1").val();
 // newRecipe.imageRecipe="C:\Users\dvir\Desktop\db music";
