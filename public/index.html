@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Shop Homepage - Start Bootstrap Template</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -58,28 +58,33 @@
     <div class="container">
 
         <div class="row compare-row">
-            <div class="col-md-12">
                 <div class="col-md-8">
                     <div class="input-group">
-                        <input type="text" class="form-control search-input" style="min-width: 680px;" placeholder="Search any product here">
+                        <h3>search recipes
+                        </h3>
+                        <input type="text" class="form-control search-input" style="width: 640px;" placeholder="Search any product here">
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-primary search-recipes" style="position: absolute; bottom: 0;">Compare!<span></span></button>
+                            <button type="button" class="btn btn-primary search-recipes" style="position: absolute; bottom: 0; left:0;">Search</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-1">
                 </div>
                 <div class="col-md-3">
-                                                <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort<span class="caret"></span></button>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
+                    <h3>Allergist food</h3>
+                    <p>
+                        <select class="selectpicker" multiple>
+                        <option id="secondSelect">Eggs</option>
+                        <option id="thirdSelect">Milk</option>
+                        <option id="forthSelect">Peanuts</option>
+                        <option id="fifthSelect">Tree nuts</option>
+                        <option id="sixthSelect">Fish</option>
+                        <option id="seventhSelect">Shellfish</option>
+                        <option id="eightSelect">Wheat</option>
+                        <option id="nineSelect">soy</option>
+                        </select>
+                    </p>
                 </div>
-            </div>
         </div>
 
 
@@ -197,10 +202,25 @@
             </div>
 
             <div class="col-sm-4 col-lg-4 col-md-4">
-                <h4><a href="#">Like this template?</a>
-                </h4>
-                <p>If you like this template, then check out <a target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this tutorial</a>                    on how to build a working review system for your online store!</p>
-                <a class="btn btn-primary" target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">View Tutorial</a>
+                <div class="thumbnail">
+                    <img src="http://placehold.it/320x150" alt="">
+                    <div class="caption">
+                        <h4 class="pull-right">$24.99</h4>
+                        <h4><a href="#">Sixth Product</a>
+                        </h4>
+                        <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right">15 reviews</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        </p>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -219,7 +239,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Your Website 2017</p>
                 </div>
             </div>
         </footer>
@@ -235,7 +255,7 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script src="handlebars/dist/handlebars.js"></script>
