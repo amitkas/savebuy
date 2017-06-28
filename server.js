@@ -43,9 +43,18 @@ var newFavRecipe = new FavRecipe(req.body)
     if (err) {
       return console.error(err)
     }
-    console.log('saved!')
+    console.log(data)
     // res.send(data)
   })})
+
+app.get('/favrecipe', function(req, res){
+  FavRecipe.find(function (error, result) {
+    if (error) {
+      return console.error(error);
+    }
+    res.send(result)
+  });
+})
 
 app.listen(8000, function () {
   console.log("what do you want from me! get me on 8000 ;-)");

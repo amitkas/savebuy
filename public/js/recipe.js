@@ -31,10 +31,6 @@ console.log(newRecipe);
         console.log(textStatus);
       }
     })
-<<<<<<< HEAD
-  }
-=======
   }
 
-      // $('.clockpicker').clockpicker();
->>>>>>> clock
+  

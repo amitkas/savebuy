@@ -77,10 +77,13 @@
             <div class="col-md-12">
                 <label class="checkbox-inline veggie-check"><input type="checkbox" class="veggie-input" value="&allowedDiet[]=">Veggie Only</label>
                 <label class="checkbox-inline allergy-check"><input type="checkbox" class="allergy-input" value="&allowedAllergy[]=">Food Allergies</label>
+                <label class="checkbox-inline my-favs"><input type="checkbox" class="my-favs-input" value="">Show My Favorites!</label>
             </div>
         </div>
 
+        <div class="row favs-main-row">
 
+        </div>
         <div class="row main-row">
 
             <div class="col-sm-4 col-lg-4 col-md-4">
@@ -257,31 +260,28 @@
 
     <script id="fav-recipe-template" type="text/x-handlebars-template">
 
-        <div class="col-sm-4 col-lg-4 col-md-4 recipe-inside">
-            <div class="thumbnail">
-                <img src="{{recipeimage}}" alt="">
+    <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                    <span class='fav-title'>My Favorite Recipe!</span>
+                 <img src="{{recipeimage}}" alt="">
                 <div class="caption">
-                    <button class="btn btn-default add-favorite pull-right" type="btn">Add Favorite</button>
+                    <button class="btn btn-default add-favorite pull-right" type="btn">Remove Favorite</button>
                     <h4><a href="http://www.yummly.co/recipe/{{recipeid}}" target="_blank">{{recipeName}}</a></h4>
                     <h4>Cooking Time: {{cookingtime}}/mins</h4>
-                    <p>{{ingredients}}</p>
-                </div>
-                <div class="ratings">
-                    <p class="pull-right">{{rating}}</p>
-                    <p>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                    </p>
+                        <p class="pull-right">User Rating: {{rating}}</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        </p>
                 </div>
             </div>
-        </div>
     </script>
 
     <script id="recipe-template" type="text/x-handlebars-template">
-
         <div class="col-sm-4 col-lg-4 col-md-4 recipe-inside">
             <div class="thumbnail">
                 <img src="{{recipeimage}}" alt="">
