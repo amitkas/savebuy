@@ -59,19 +59,25 @@
 
         <div class="row compare-row">
             <div class="col-md-12">
-                <div class="input-group">
-                    <input type="text" class="form-control search-input" aria-label="..." placeholder="Search any product here">
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-primary search-recipes">Compare!<span></span></button>
-                        <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort<span class="caret"></span></button>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <input type="text" class="form-control search-input" style="min-width: 680px;" placeholder="Search any product here">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-primary search-recipes" style="position: absolute; bottom: 0;">Compare!<span></span></button>
+                        </div>
                     </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-3">
+                                                <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort<span class="caret"></span></button>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
                 </div>
             </div>
         </div>
@@ -226,7 +232,7 @@
     <!--//main js-->
 
     <script src="js/main.js"></script>
-    
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -236,27 +242,27 @@
 
     <script id="recipe-template" type="text/x-handlebars-template">
 
-            <div class="col-sm-4 col-lg-4 col-md-4 recipe-inside">
-                <div class="thumbnail">
-                    <img src="{{recipeimage}}" alt="">
-                    <div class="caption">
-                        <button class="btn btn-default add-favorite pull-right" type="btn">Add Favorite</button>
-                        <h4><a href="http://www.yummly.co/recipe/{{recipeid}}" target="_blank">{{recipeName}}</a></h4>
-                        <h4>Cooking Time: {{cookingtime}}/mins</h4>
-                        <p>{{ingredients}}</p>
-                    </div>
-                    <div class="ratings">
-                        <p class="pull-right">{{rating}}</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                        </p>
-                    </div>
+        <div class="col-sm-4 col-lg-4 col-md-4 recipe-inside">
+            <div class="thumbnail">
+                <img src="{{recipeimage}}" alt="">
+                <div class="caption">
+                    <button class="btn btn-default add-favorite pull-right" type="btn">Add Favorite</button>
+                    <h4><a href="http://www.yummly.co/recipe/{{recipeid}}" target="_blank">{{recipeName}}</a></h4>
+                    <h4>Cooking Time: {{cookingtime}}/mins</h4>
+                    <p>{{ingredients}}</p>
+                </div>
+                <div class="ratings">
+                    <p class="pull-right">{{rating}}</p>
+                    <p>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </p>
                 </div>
             </div>
+        </div>
     </script>
 </body>
 
