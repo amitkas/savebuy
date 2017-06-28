@@ -21,11 +21,11 @@ var FoodApp = function () {
     }
 
 
-    var recipeSearch = function (text, recipetosearch) {
+    var recipeSearch = function (text, recipetosearch, veggieCheck, allergyCheck) {
         foods = []
            $.ajax({
             method: "GET",
-            url: 'http://api.yummly.com/v1/api/recipes?_app_id=06389aba&_app_key=5ac00c18990b0551a19a507887252268&q=' + [text] +[recipetosearch]+ '',
+            url: 'http://api.yummly.com/v1/api/recipes?_app_id=06389aba&_app_key=5ac00c18990b0551a19a507887252268&q=' + [text]+[recipetosearch]+[veggieCheck]+[allergyCheck] +'&requirePictures=true',
             success: function (data) {
                 for (var i = 0; i < data.matches.length; i++) {
                  var recipeName = data.matches[i].recipeName
@@ -68,11 +68,7 @@ var app = FoodApp();
 
 var $input = $(".compare-row");
 
-$input.on('changed.bs.select', '#chose-cuisine', function (e) {
-    debugger
-    alert('hey!')
-console.log(e)
-})
+var addVeggie
 
 $input.on('click', '.search-recipes', function () {
     var $freesearch = $('.search-input');
@@ -83,11 +79,6 @@ $input.on('click', '.search-recipes', function () {
     var freeSearch = ($freesearch.val())
     var x = $('.dropdown-toggle').attr("title" )
     y = x.toLowerCase().split(', ')
-    var firstcuisine = y[0];
-    var seccuisine = y[1];
-    var thirdcuisine = y[2];
-    var fourcuisine = y[3];
-    var fivecuisine = y[4];
 
     var recipetosearchasarray = []
 
@@ -97,11 +88,30 @@ $input.on('click', '.search-recipes', function () {
             recipetosearchasarray.push(cuisinewithajax)
         }
     }
-    console.log(recipetosearchasarray)
     var recipetosearch = recipetosearchasarray.join("")
-    console.log(recipetosearch)
-    app.recipeSearch(freeSearch, recipetosearch)
+
+    var veggieCheck = $('.veggie-input').attr('value')
+    var allergyCheck = $('.allergy-input').attr('value')
+    app.recipeSearch(freeSearch, recipetosearch, veggieCheck, allergyCheck)
 })
+
+
+
+$('.veggie-check :checkbox').change(function() {
+    if (this.checked) {
+        $(".veggie-input").attr({'value':'&allowedDiet[]=386^Vegan'})     
+    } else {
+        $(".veggie-input").attr({'value':'&allowedDiet[]='})  
+    }
+});
+
+$('.allergy-check :checkbox').change(function() {
+    if (this.checked) {
+        $(".allergy-input").attr({'value':'&allowedAllergy[]=393^Gluten-Free&allowedAllergy[]=394^Peanut-Free'})     
+    } else {
+        $(".allergy-input").attr({'value':'&allowedAllergy[]='})  
+    }
+});
 
 
 var $maindisplay = $(".main-row");
