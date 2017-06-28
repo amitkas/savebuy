@@ -4,7 +4,8 @@ var recipeSchema = new Schema({
   text: String,
   totalTimeInSeconds: Number,
   cuisine: String,
-  ingredients: String
+  ingredients: String,
+  imageRecipe: { data: Buffer, contentType: String }
 });
 
 var Recipe = mongoose.model('recipe', recipeSchema)
