@@ -89,4 +89,3 @@ var $maindisplay = $(".main-row");
         app.favRecipe(recipeIndex)
 
     })
-
