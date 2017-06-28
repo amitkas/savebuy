@@ -31,23 +31,39 @@
     display: block;
 }
 
-#submitForm{
-margin-left: 50%;
-top:2px;
+#submitForm {
+    margin-left: 50%;
+    top: 2px;
 }
 
 body {
     background-image: url("images/pizza2.jpg");
 }
 
-.form-group{
+.form-group {
     background-color: #DCB4B4;
+    min-height: 60px;
 }
 
-.form-control{
+.form-control {
     background-color: #FEE4E4;
+    min-height: 60px;
 }
 
-.formDiv{
-        background-color: #FFF8F8;
+.formDiv {
+    background-color: #FFF8F8;
 }
+
+.selectFileClass {
+    width: 100%;
+}
+
+.input-group-btn {
+    position: relative;
+    font-size: 50px;
+    white-space: nowrap;
+    padding-left: 45%;
+    background-color: #FEE4E4;
+    min-height: 60px;
+}
+

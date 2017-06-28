@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 var recipeSchema = new Schema({
   text: String,
   totalTimeInSeconds: Number,
-  cuisine: String,
+  cuisine: [],
   ingredients: String,
   imageRecipe: { data: Buffer, contentType: String }
 });

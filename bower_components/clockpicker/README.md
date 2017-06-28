@@ -1,4 +1,4 @@
-# ClockPicker [![Bower version](https://badge.fury.io/bo/clockpicker.svg)](http://badge.fury.io/bo/clockpicker) [![Build Status](https://travis-ci.org/weareoutman/clockpicker.svg)](https://travis-ci.org/weareoutman/clockpicker)  [![devDependency Status](https://david-dm.org/weareoutman/clockpicker/dev-status.svg)](https://david-dm.org/weareoutman/clockpicker#info=devDependencies)
+# ClockPicker [![Build Status](https://travis-ci.org/weareoutman/clockpicker.svg)](https://travis-ci.org/weareoutman/clockpicker)  [![devDependency Status](https://david-dm.org/weareoutman/clockpicker.svg)](https://david-dm.org/weareoutman/clockpicker#info=devDependencies)
 
 A clock-style timepicker for Bootstrap (or jQuery).
 [Documentation and examples](http://weareoutman.github.io/clockpicker/).
@@ -77,15 +77,6 @@ if (something) {
 | twelvehour | false | enables twelve hour mode with AM & PM buttons |
 | vibrate | true | vibrate the device when dragging clock hand |
 | fromnow | 0 | set default time to * milliseconds from now (using with default = 'now') |
-| init | | callback function triggered after the colorpicker has been initiated |
-| beforeShow | | callback function triggered before popup is shown |
-| afterShow | | callback function triggered after popup is shown |
-| beforeHide | | callback function triggered before popup is hidden Note:will be triggered between a beforeDone and afterDone |
-| afterHide | | callback function triggered after popup is hidden Note:will be triggered between a beforeDone and afterDone |
-| beforeHourSelect | | callback function triggered before user makes an hour selection |
-| afterHourSelect | | callback function triggered after user makes an hour selection |
-| beforeDone | | callback function triggered before time is written to input |
-| afterDone | | callback function triggered after time is written to input |
 
 ## Operations
 
