@@ -21,11 +21,11 @@ var FoodApp = function () {
     }
 
 
-    var recipeSearch = function (text) {
+    var recipeSearch = function (text, recipetosearch, veggieCheck, allergyCheck) {
         foods = []
-        $.ajax({
+           $.ajax({
             method: "GET",
-            url: 'http://api.yummly.com/v1/api/recipes?_app_id=06389aba&_app_key=5ac00c18990b0551a19a507887252268&q=' + [text] + '',
+            url: 'http://api.yummly.com/v1/api/recipes?_app_id=06389aba&_app_key=5ac00c18990b0551a19a507887252268&q=' + [text]+[recipetosearch]+[veggieCheck]+[allergyCheck] +'&requirePictures=true',
             success: function (data) {
                 for (var i = 0; i < data.matches.length; i++) {
                  var recipeName = data.matches[i].recipeName
@@ -66,7 +66,9 @@ return {
 
 var app = FoodApp();
 
-var $input = $(".input-group");
+var $input = $(".compare-row");
+
+var addVeggie
 
 $input.on('click', '.search-recipes', function () {
     var $freesearch = $('.search-input');
@@ -75,9 +77,41 @@ $input.on('click', '.search-recipes', function () {
         return;
     }
     var freeSearch = ($freesearch.val())
-    app.recipeSearch(freeSearch)
+    var x = $('.dropdown-toggle').attr("title" )
+    y = x.toLowerCase().split(', ')
 
+    var recipetosearchasarray = []
+
+    for (var i = 0; i < y.length; i++) {
+        if(y[i]!==undefined);{
+            var cuisinewithajax = '&allowedCuisine[]=cuisine^cuisine-'+y[i]
+            recipetosearchasarray.push(cuisinewithajax)
+        }
+    }
+    var recipetosearch = recipetosearchasarray.join("")
+
+    var veggieCheck = $('.veggie-input').attr('value')
+    var allergyCheck = $('.allergy-input').attr('value')
+    app.recipeSearch(freeSearch, recipetosearch, veggieCheck, allergyCheck)
 })
+
+
+
+$('.veggie-check :checkbox').change(function() {
+    if (this.checked) {
+        $(".veggie-input").attr({'value':'&allowedDiet[]=386^Vegan'})     
+    } else {
+        $(".veggie-input").attr({'value':'&allowedDiet[]='})  
+    }
+});
+
+$('.allergy-check :checkbox').change(function() {
+    if (this.checked) {
+        $(".allergy-input").attr({'value':'&allowedAllergy[]=393^Gluten-Free&allowedAllergy[]=394^Peanut-Free'})     
+    } else {
+        $(".allergy-input").attr({'value':'&allowedAllergy[]='})  
+    }
+});
 
 
 var $maindisplay = $(".main-row");
