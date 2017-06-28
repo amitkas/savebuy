@@ -33,4 +33,4 @@ console.log(newRecipe);
     })
   }
 
-      $('.clockpicker').clockpicker();
+      // $('.clockpicker').clockpicker();
