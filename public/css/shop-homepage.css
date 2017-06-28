@@ -56,3 +56,10 @@ footer {
 .compare-row{
     margin-bottom: 20px
 }
+
+.fav-title{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background: palegreen;
+}
