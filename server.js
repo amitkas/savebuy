@@ -20,6 +20,9 @@ app.use(bodyParser.urlencoded({
 
 
 
+app.get("/recipe.html", function(req, res){
+  res.sendFile(__dirname+'/addRecpies/recipe.html')
+})
 
 
 app.listen(8000, function () {
