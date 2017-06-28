@@ -32,6 +32,7 @@ body {
 
 .thumbnail img {
     width: 80%;
+    margin-left:0px;
 }
 
 .ratings {
