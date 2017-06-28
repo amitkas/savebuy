@@ -26,6 +26,10 @@ app.get("/recipe.html", function(req, res){
   res.sendFile(__dirname+'/addRecpies/recipe.html')
 })
 
+app.get("/hungry-eating.gif", function(req, res){
+  res.sendFile(__dirname+'/hungry-eating.gif/')
+})
+
 app.post('/newrecipe', function (req, res) {
   console.log(req.body)
   var newRecipe = Recipe.create(req.body, function (err, recipe) {
@@ -50,6 +54,16 @@ var newFavRecipe = new FavRecipe(req.body)
 
 app.get('/favrecipe', function(req, res){
   FavRecipe.find(function (error, result) {
+    if (error) {
+      return console.error(error);
+    }
+    res.send(result)
+  });
+})
+
+
+app.get('/newrecipe', function(req, res){
+  Recipe.find(function (error, result) {
     if (error) {
       return console.error(error);
     }

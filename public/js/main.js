@@ -17,6 +17,24 @@ var FoodApp = function () {
         })
     }
 
+
+    var getmyRecipes = function(){
+        var myrec = []
+        $.ajax('/newrecipe', {
+        method: "GET",
+        success: function(data){
+            myrec = data
+            console.log(myrec)
+            renderMyRecipes(myrec)
+        },
+            error: function (jqXHR, textStatus, errorThrown) {
+            alert('sry, you do not any recepies of your own!');
+            }
+        })
+    }
+
+
+
     var favRecipe = function (recipeIndex) {
         var recindex = foods[recipeIndex]
         console.log(recindex)
@@ -85,7 +103,6 @@ var FoodApp = function () {
 
 
     var renderFavs = function (myfavs) {
-        debugger
         var favs = myfavs
         $('.favs-main-row').empty();
         var source = $('#fav-recipe-template').html();
@@ -96,12 +113,24 @@ var FoodApp = function () {
          }
     }
 
+    var renderMyRecipes = function (myrecp) {
+        debugger
+        var myrec = myrecp
+        $('.myrec-main-row').empty();
+        var source = $('#my-recipe-template').html();
+        var template = Handlebars.compile(source);
+         for (var i = 0; i < myrec.length; i++) {
+            var newHTML = template(myrec[i]);
+            $('.myrec-main-row').append(newHTML);
+         }
+    }
 
 
     return {
         recipeSearch: recipeSearch,
         favRecipe: favRecipe,
-        getmyFavorites: getmyFavorites
+        getmyFavorites: getmyFavorites,
+        getmyRecipes: getmyRecipes
     }
 }
 
@@ -173,6 +202,14 @@ $('.my-favs :checkbox').change(function () {
      }
     })
 
+$('.my-recps :checkbox').change(function () {
+    if (this.checked) {
+        app.getmyRecipes()
+        }
+     else { 
+         $('.myrec-main-row').empty();
+     }
+    })
 
 var $maindisplay = $(".main-row");
 

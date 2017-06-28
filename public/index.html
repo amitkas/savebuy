@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Eat Bean</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,8 +19,8 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-custom" role="navigation">
+        <div class="container nav-con">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -29,20 +29,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="http://localhost:8000/">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="http://localhost:8000/recipe.html">Add Recipe!</a>
+                        <a href="http://localhost:8000/recipe.html">Add Recipe</a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a href="#">Services</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -54,18 +54,9 @@
     <div class="container">
 
         <div class="row compare-row">
-            <div class="col-md-8">
-                <div class="input-group">
-                    <h3>Search Recipes</h3>
-                    <input type="text" class="form-control search-input" style="width: 640px;" placeholder="Search any product here">
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-primary search-recipes" style="position: absolute; bottom: 0; left:0;">Search</button>
-                    </div>
-                </div>
-            </div>
             <div class="col-md-4">
                 <h3>Cuisine</h3>
-                    <select id='chose-cuisine' class="selectpicker cuisine-check" multiple>
+                <select id='chose-cuisine' class="selectpicker cuisine-check" multiple>
                         <option id="italian">Italian</option>
                         <option id="asian">Asian</option>
                         <option id="medi">Mediterranean</option>
@@ -74,161 +65,64 @@
                     </select>
                 </p>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-8">
+                <div class="input-group">
+                    <h3>Search Recipes</h3>
+                    <input type="text" class="form-control search-input" style="width: 640px;" placeholder="Search any product here">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-success search-recipes" style="position: absolute; bottom: 0; left:0;">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row filters-row">
+            <div class="col-md-4">
                 <label class="checkbox-inline veggie-check"><input type="checkbox" class="veggie-input" value="&allowedDiet[]=">Veggie Only</label>
                 <label class="checkbox-inline allergy-check"><input type="checkbox" class="allergy-input" value="&allowedAllergy[]=">Food Allergies</label>
-                <label class="checkbox-inline my-favs"><input type="checkbox" class="my-favs-input" value="">Show My Favorites!</label>
+
             </div>
+            <div class="col-md-4">
+                <label class="checkbox-inline spicy"><input type="checkbox" class="spicy-input" value="">Spicy</label>
+                <label class="checkbox-inline sweet"><input type="checkbox" class="sweet-input" value="">Sweet</label>
+
+            </div>
+            <div class="col-md-4">
+              <span class="label label-success">New!</span>
+
+                <label class="checkbox-inline my-favs"><input type="checkbox" class="my-favs-input" value="">Show My Favorites!</label>
+                <label class="checkbox-inline my-recps"><input type="checkbox" class="my-recps-input" value="">Show My Recepies!</label>
+
+            </div>
+        </div>
+
+
+        <div class="row myrec-main-row">
         </div>
 
         <div class="row favs-main-row">
-
         </div>
+
         <div class="row main-row">
-
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                    <span class='fav-title'>My Favorite Recipe!</span>
-
-                    <img src="http://placehold.it/320x150" alt="">
-                    <div class="caption">
-                        <h4 class="pull-right">$24.99</h4>
-                        <h4><a href="#">First Product</a>
-                        </h4>
-                        <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                    </div>
-                    <div class="ratings">
-                        <p class="pull-right">15 reviews</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/320x150" alt="">
-                    <div class="caption">
-                        <h4 class="pull-right">$64.99</h4>
-                        <h4><a href="#">Second Product</a>
-                        </h4>
-                        <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                    <div class="ratings">
-                        <p class="pull-right">12 reviews</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/320x150" alt="">
-                    <div class="caption">
-                        <h4 class="pull-right">$74.99</h4>
-                        <h4><a href="#">Third Product</a>
-                        </h4>
-                        <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                    <div class="ratings">
-                        <p class="pull-right">31 reviews</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/320x150" alt="">
-                    <div class="caption">
-                        <h4 class="pull-right">$84.99</h4>
-                        <h4><a href="#">Fourth Product</a>
-                        </h4>
-                        <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                    <div class="ratings">
-                        <p class="pull-right">6 reviews</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/320x150" alt="">
-                    <div class="caption">
-                        <h4 class="pull-right">$94.99</h4>
-                        <h4><a href="#">Fifth Product</a>
-                        </h4>
-                        <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                    <div class="ratings">
-                        <p class="pull-right">18 reviews</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/320x150" alt="">
-                    <div class="caption">
-                        <h4 class="pull-right">$24.99</h4>
-                        <h4><a href="#">Sixth Product</a>
-                        </h4>
-                        <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                    </div>
-                    <div class="ratings">
-                        <p class="pull-right">15 reviews</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
         </div>
-
-    </div>
-
 
     </div>
     <!-- /.container -->
+    <div class="jumbotron">
 
+    <div class="container">
+        <div class="row intro-row">
+            <div class="col-md-12">
+                <div class="page-header">
+                <h1>Eat Bean</h1>
+                </div>
+                <img src="http://localhost:8000/hungry-eating.gif">
+                <h3>Bean says: you better start cooking!</h3>
+                <h3>Use the Search and get your hungry man some food!</h3>
+            </div>
+        </div>
+    </div>
+    </div>
     <div class="container">
 
         <hr>
@@ -258,25 +152,46 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="handlebars/dist/handlebars.js"></script>
 
+
+    <script id="my-recipe-template" type="text/x-handlebars-template">
+        <div class="col-sm-4 col-lg-4 col-md-4 recipe-inside">
+            <div class="thumbnail">
+                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                <span class='fav-title'>My Own Recipe!</span>
+                <img src="{{recipeimage}}" alt="">
+                <div class="caption">
+                    <button class="btn btn-default add-favorite pull-right" type="btn">Send to Friend</button>
+                    <h4><a href="{{imageRecipe}}" target="_blank">{{recipeName}}</a></h4>
+                    <h4>Cooking Time: {{totalTimeInSeconds}}/hours</h4>
+                    <p>{{ingredients}}</p>
+                </div>
+                <div class="ratings">
+                    <p class="pull-right">{{rating}}</p>
+                </div>
+            </div>
+        </div>
+    </script>
+
+
     <script id="fav-recipe-template" type="text/x-handlebars-template">
 
-    <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                    <span class='fav-title'>My Favorite Recipe!</span>
-                 <img src="{{recipeimage}}" alt="">
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                <span class='fav-title'>My Favorite Recipe!</span>
+                <img src="{{recipeimage}}" alt="">
                 <div class="caption">
                     <button class="btn btn-default add-favorite pull-right" type="btn">Remove Favorite</button>
                     <h4><a href="http://www.yummly.co/recipe/{{recipeid}}" target="_blank">{{recipeName}}</a></h4>
                     <h4>Cooking Time: {{cookingtime}}/mins</h4>
-                        <p class="pull-right">User Rating: {{rating}}</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                        </p>
+                    <p class="pull-right">User Rating: {{rating}}</p>
+                    <p>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </p>
                 </div>
             </div>
     </script>

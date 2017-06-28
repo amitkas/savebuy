@@ -3,13 +3,51 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+.navbar-custom {
+    background-color:#1b5e20;
+    color:#ffffff;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#fff;
+}
+
+.navbar-custom .navbar-nav > .active > a {
+    color: #ffffff;
+    background-color:transparent;
+}
+
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus,
+.navbar-custom .navbar-nav > .open >a {
+    text-decoration: none;
+    background-color: #33aa33;
+}
+
+.navbar-custom .navbar-brand {
+    color:#eeeeee;
+}
+.navbar-custom .navbar-toggle {
+    background-color:#eeeeee;
+}
+.navbar-custom .icon-bar {
+    background-color:#33aa33;
+}
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background: white;
 }
 
 .slide-image {
     width: 100%;
+}
+
+.container {
+        background: white;
 }
 
 .carousel-holder {
@@ -37,11 +75,13 @@ body {
 .ratings {
     padding-right: 10px;
     padding-left: 10px;
-    color: #d17581;
+    color: white;
 }
 
 .thumbnail {
     padding: 0;
+    background: #f0f4c3
+
 }
 
 .thumbnail .caption-full {
@@ -53,7 +93,7 @@ footer {
     margin: 50px 0;
 }
 
-.compare-row{
+.filters-row{
     margin-bottom: 20px
 }
 
@@ -62,4 +102,31 @@ footer {
     margin-bottom: 5px;
     margin-top: 5px;
     color: green
+}
+
+/*.my-favs{
+    color: ;
+}*/
+.jumbotron{
+padding-top: 10px;
+    background: white;
+
+}
+
+
+.intro-row{
+    text-align: center;
+    background: white
+}
+
+.nav-con{
+        background: #1b5e20;
+}
+
+.intro-con{
+    background: white
+}
+
+.intro-col{
+    background: white
 }
