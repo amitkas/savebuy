@@ -16,6 +16,7 @@ app.use(express.static('public'));
 app.use(express.static('node_modules'));
 app.use(bodyParser.json());
 app.use(express.static('bower_components'));
+app.use(express.static('clockpicker-gh-pages'));
 app.use(bodyParser.urlencoded({
   extended: false
 }));
