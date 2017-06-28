@@ -1,0 +1,53 @@
+.mainH {
+    text-align: center;
+}
+
+.inputDescription {
+    min-height: 100px;
+}
+
+#formGroupExampleInput3 {
+    min-height: 150px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#submitForm{
+margin-left: 50%;
+top:2px;
+}
+
+body {
+    background-image: url("images/pizza2.jpg");
+}
+
+.form-group{
+    background-color: #DCB4B4;
+}
+
+.form-control{
+    background-color: #FEE4E4;
+}
+
+.formDiv{
+        background-color: #FFF8F8;
+}

@@ -1,16 +1,17 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Recpies Page</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>New Recpies</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <!-- Bootstrap Core CSS -->
@@ -18,17 +19,79 @@
 
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="css/recipe.css" rel="stylesheet">
 
 </head>
-<body>
-    <h1>hello<h1>
-</body>
 
-<script src='jquery/dist/jquery.js'></script>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="http://localhost:8000/recipe.html">Add Recipe!</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <div class="col-md-offset-2 col-md-8 formDiv">
+        <h1 class="mainH">Bring your recipes</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8 formDiv">
+            <form>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Recipe name</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Description</label>
+                    <input type="text" class="form-control inputDescription" id="formGroupExampleInput2" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Instructions</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Another input">
+                </div>
+                <div class="input-group">
+                    <input type="file" class="form-control">
+                    <span class="input-group-addon "></span>
+                </div>
+                <div class="row">
+                        <button type="button" class="btn btn-success" id="submitForm">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <script src='jquery/dist/jquery.js'></script>
 
     <!--//main js-->
 
-    <script src="js/main.js"></script>
+    <script src="js/recipe.js"></script>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -37,5 +100,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="handlebars/dist/handlebars.js"></script>
 
-    
+
 </html>
+</body>
