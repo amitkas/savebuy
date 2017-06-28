@@ -18,9 +18,9 @@ newRecipe.totalTimeInSeconds=$("#cookingTimeInput").val();
 // newRecipe.cuisine=newCuisine;
 newRecipe.cuisine='mexican';
 newRecipe.ingredients=$("#recipeInstuctionsInput").val();
-newRecipe.imageAddress=$("#imageSourceInput1").val();
+newRecipe.imageRecipe=$("#imageSourceInput1").val();
 // newRecipe.imageRecipe="C:\Users\dvir\Desktop\db music";
-// console.log(newRecipe);
+console.log(newRecipe);
 saveNewRecipe(newRecipe);
 
 });

@@ -27,6 +27,7 @@ app.get("/recipe.html", function(req, res){
 })
 
 app.post('/newrecipe', function (req, res) {
+  console.log(req.body)
   var newRecipe = Recipe.create(req.body, function (err, recipe) {
     if (err) {
       res.send('error saving new recipe')
