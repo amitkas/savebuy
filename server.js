@@ -6,9 +6,8 @@ mongoose.connect('mongodb://localhost/savebuy', function () {
   console.log("DB connection established!!!");
 })
 
-// var Post = require('./models/postModel');
 
-
+var Recipe = require('./addRecpies/models/recipeModel');
 
 var app = express();
 app.use(express.static('public'));
@@ -24,6 +23,16 @@ app.get("/recipe.html", function(req, res){
   res.sendFile(__dirname+'/addRecpies/recipe.html')
 })
 
+app.post('/newrecipe', function (req, res) {
+  var newRecipe = Recipe.create(req.body, function (err, recipe) {
+    if (err) {
+      res.send('error saving new recipe')
+    } else {
+      console.log(recipe)
+      res.send(recipe)
+    }
+  });
+});
 
 app.listen(8000, function () {
   console.log("what do you want from me! get me on 8000 ;-)");

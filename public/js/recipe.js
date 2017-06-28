@@ -28,6 +28,20 @@ newRecipe.totalTimeInSeconds=$("#cookingTimeInput").val();
 newRecipe.cuisine="Mexican";
 newRecipe.ingredients=$("#recipeInstuctionsInput").val();
 // newRecipe.imageAddress=$(".imageSourceInput").val();
-newRecipe.imageAddress="C:\Users\dvir\Desktop\db music";
-console.log(newRecipe)
+newRecipe.imageRecipe="C:\Users\dvir\Desktop\db music";
+console.log(newRecipe);
+saveNewRecipe(newRecipe);
 });
+
+  function saveNewRecipe(newRecipe) {
+    $.ajax('/newrecipe', {
+      method: "POST",
+      data: newRecipe,
+      success: function (data) {
+          console.log("new recipe saved Thank you :)")
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log(textStatus);
+      }
+    })
+  }
