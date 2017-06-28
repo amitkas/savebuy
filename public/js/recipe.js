@@ -9,15 +9,19 @@ console.log("hello")
 
 // collect the information from the recpie from
 $(".btn-success").on('click', function () {
+    var x = $('.dropdown-toggle').attr("title");
+  var newCuisine = x.toLowerCase().split(', ');
+  // console.log(newCuisine);
     var newRecipe={}
 newRecipe.recipeName=$("#recipeNameInput").val();
 newRecipe.totalTimeInSeconds=$("#cookingTimeInput").val();
-newRecipe.cuisine="Mexican";
+newRecipe.cuisine=newCuisine;
 newRecipe.ingredients=$("#recipeInstuctionsInput").val();
-newRecipe.imageAddress=$(".imageSourceInput").val();
+newRecipe.imageAddress=$("#imageSourceInput1").val();
 // newRecipe.imageRecipe="C:\Users\dvir\Desktop\db music";
-console.log(newRecipe);
-// saveNewRecipe(newRecipe);
+// console.log(newRecipe);
+saveNewRecipe(newRecipe);
+
 });
 
   function saveNewRecipe(newRecipe) {

@@ -15,13 +15,17 @@
 
     <link rel="stylesheet" href="/bootstrap-fileinput/css/fileinput.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="/clockpicker-gh-pages/dist/bootstrap-clockpicker.min.css">
+    <link rel="stylesheet" href="/clockpicker/dist/jquery-clockpicker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
     <link href="css/recipe.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+
 
 </head>
 
@@ -67,26 +71,37 @@
                     <label for="formGroupExampleInput">Recipe name</label>
                     <input type="text" class="form-control" id="recipeNameInput" placeholder="Example input">
                 </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Recipe style</label>
+                    <p class="form-control">
+                    <select id='chose-cuisine' class="selectpicker cuisine-check " multiple>
+                        <option id="italian">Italian</option>
+                        <option id="asian">Asian</option>
+                        <option id="medi">Mediterranean</option>
+                        <option id="mexican">Mexican</option>
+                        <option id="japan">Japanese </option>
+                    </select>
+                    </p>
+                </div>
+
                 <div class="form-group inputDescription1">
+                    <label for="formGroupExampleInput">Cooking Time</label>
                     <div class="input-group clockpicker">
-                        <input type="text" class="form-control" value="09:30">
+                        <input type="text" class="form-control" value="00:01" id="cookingTimeInput">
                         <span class="input-group-addon">
                               <span class="glyphicon glyphicon-time"></span>
                         </span>
                     </div>
-                    <script type="text/javascript">
-                        $('.clockpicker').clockpicker();
-                    </script>
                 </div>
                 <div class="form-group formGroupExampleInputcss">
                     <label for="formGroupExampleInput2">Recipes instructions</label>
                     <input type="text" class="form-control" id="recipeInstuctionsInput" placeholder="Another input">
                 </div>
-                <div class="input-group">
+                <div class="input-group selectFileClass">
                     <!--<input type="file" class="form-control imageSourceInput">-->
                     <!--<span class="input-group-addon"></span>-->
                     <label class="control-label">Select File</label>
-                    <input id="input-1" type="file" class="file">
+                    <input id="imageSourceInput1" type="file" class="file">
                 </div>
                 <div class="row">
                     <button type="button" class="btn btn-success" id="submitForm">Submit</button>
@@ -94,32 +109,26 @@
             </form>
         </div>
     </div>
-    <div class="input-group clockpicker">
-    <input type="text" class="form-control" value="09:30">
-    <span class="input-group-addon">
-        <span class="glyphicon glyphicon-time"></span>
-    </span>
-</div>
-<script type="text/javascript">
-$('.clockpicker').clockpicker();
-</script>
-    <script src='jquery/dist/jquery.js'></script>
+
 
     <!--//main js-->
 
-    <script src="js/recipe.js"></script>
 
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+
     <script src="/bootstrap-fileinput/js/fileinput.min.js"></script>
-    <script src="/clockpicker-gh-pages/dist/bootstrap-clockpicker.min.js"></script>
+
 
     <!-- Bootstrap Core JavaScript -->
 
     <script src="js/bootstrap.min.js"></script>
 
     <script src="handlebars/dist/handlebars.js"></script>>
+    <script src="/clockpicker/dist/jquery-clockpicker.js"></script>
+    <script src="js/recipe.js"></script>
+    <script src="js/clockpicker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
 
 </html>
 </body>
