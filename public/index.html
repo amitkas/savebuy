@@ -13,7 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
 
@@ -58,22 +58,34 @@
     <div class="container">
 
         <div class="row compare-row">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <div class="input-group">
-                    <input type="text" class="form-control search-input" aria-label="..." placeholder="Search any product here">
+                    <h3 class="header3">Find a recipe</h3>
+                    <input type="text" class="form-control search-input" style="min-width: 680px;"  placeholder="what kind of recipe you are looking for?">
                     <div class="input-group-btn">
-                        <button type="button" class="btn btn-primary search-recipes">Compare!<span></span></button>
-                        <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort<span class="caret"></span></button>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
+                        <button type="button" class="btn btn-primary search-recipes"style="position: absolute; bottom: 0;">Search</button>
                     </div>
                 </div>
             </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-3">
+
+                <form>
+                    <h3 class="header3">Your Alergis:</h3>
+                    <select class="selectpicker" multiple>
+                           <option>Eggs</option>
+                           <option>Milk</option>
+                           <option>Peants</option>
+                           <option>Fish</option>
+                           <option>Tree Nuts</option>
+                            <option>Wheat</option>
+                            <option>Shellfish</option>
+                            <option>Soy</option>
+                    </select>
+                </form>
+            </div>
+
         </div>
 
 
@@ -191,10 +203,25 @@
             </div>
 
             <div class="col-sm-4 col-lg-4 col-md-4">
-                <h4><a href="#">Like this template?</a>
-                </h4>
-                <p>If you like this template, then check out <a target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this tutorial</a>                    on how to build a working review system for your online store!</p>
-                <a class="btn btn-primary" target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">View Tutorial</a>
+                <div class="thumbnail">
+                    <img src="http://placehold.it/320x150" alt="">
+                    <div class="caption">
+                        <h4 class="pull-right">$64.99</h4>
+                        <h4><a href="#">Six Product</a>
+                        </h4>
+                        <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right">12 reviews</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </p>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -226,37 +253,38 @@
     <!--//main js-->
 
     <script src="js/main.js"></script>
-    
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="handlebars/dist/handlebars.js"></script>
 
     <script id="recipe-template" type="text/x-handlebars-template">
 
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <img src="{{recipeimage}}" alt="">
-                    <div class="caption">
-                        <h4 class="pull-right">$24.99</h4>
-                        <h4><a href="#">{{recipeName}}</a>
-                        </h4>
-                        <p>{{ingredients}}</p>
-                    </div>
-                    <div class="ratings">
-                        <p class="pull-right">{{rating}}</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                        </p>
-                    </div>
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src="{{recipeimage}}" alt="">
+                <div class="caption">
+                    <h4 class="pull-right">$24.99</h4>
+                    <h4><a href="#">{{recipeName}}</a>
+                    </h4>
+                    <p>{{ingredients}}</p>
+                </div>
+                <div class="ratings">
+                    <p class="pull-right">{{rating}}</p>
+                    <p>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </p>
                 </div>
             </div>
+        </div>
     </script>
 </body>
 
