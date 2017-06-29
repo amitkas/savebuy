@@ -30,8 +30,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-custom" role="navigation">
+        <div class="container nav-con">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -40,7 +40,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="http://localhost:8000/#">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -48,25 +48,23 @@
                     <li>
                         <a href="http://localhost:8000/recipe.html">Add Recipe!</a>
                     </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-    <div class="col-md-offset-2 col-md-8 formDiv">
+    <!--<div class="col-md-offset-2 col-md-8 formDiv" id="topDiv">
         <h1 class="mainH">Bring your recipes</h1>
-    </div>
+    </div>-->
+<div class="container containerStyleTop">
+    <div class="row ">
 
-    <div class="row">
-        <div class="col-md-offset-2 col-md-8 formDiv">
-            <form>
+        <div class="col-md-10 col-md-offset-1 formDiv">
+                    <div  id="topDiv">
+        <h1 class="mainH">Bring your recipes</h1>
+        </div>
+            <form class="formStyle">
                 <div class="form-group">
                     <label for="formGroupExampleInput">Recipe name</label>
                     <input type="text" class="form-control" id="recipeNameInput" placeholder="Example input">
@@ -101,7 +99,7 @@
                     <!--<input type="file" class="form-control imageSourceInput">-->
                     <!--<span class="input-group-addon"></span>-->
                     <label class="control-label">Select File</label>
-                    <input id="imageSourceInput1" type="file" class="file">
+                    <input id="imageSourceInput1" type="file" class="file file-preview-text">
                 </div>
                 <div class="row">
                     <button type="button" class="btn btn-success" id="submitForm">Submit</button>
@@ -109,7 +107,7 @@
             </form>
         </div>
     </div>
-
+</div>
 
     <!--//main js-->
 

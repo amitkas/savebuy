@@ -2,6 +2,7 @@ $(document).on('change', ':file', function() {
     var input = $(this),
         numFiles = input.get(0).files ? input.get(0).files.length : 1,
         label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+
     input.trigger('fileselect', [numFiles, label]);
 });
 
@@ -21,7 +22,7 @@ newRecipe.ingredients=$("#recipeInstuctionsInput").val();
 newRecipe.imageRecipe=$("#imageSourceInput1").val();
 // newRecipe.imageRecipe="C:\Users\dvir\Desktop\db music";
 console.log(newRecipe);
-saveNewRecipe(newRecipe);
+// saveNewRecipe(newRecipe);
 
 });
 

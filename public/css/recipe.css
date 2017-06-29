@@ -32,12 +32,13 @@
 }
 
 #submitForm {
-    margin-left: 50%;
-    top: 2px;
+    /*margin-left: 50%;
+    top: 2px;*/
 }
 
 body {
-    background-image: url("images/pizza2.jpg");
+    background: url("images/food_back.jpg") no-repeat center;
+    background-size: cover;
 }
 
 .form-group {
@@ -48,6 +49,10 @@ body {
 .form-control {
     background-color: #FEE4E4;
     min-height: 60px;
+}
+
+#topDiv {
+    margin: auto;
 }
 
 .formDiv {
@@ -62,8 +67,23 @@ body {
     position: relative;
     font-size: 50px;
     white-space: nowrap;
-    padding-left: 45%;
+    padding-left: 50%;
     background-color: #FEE4E4;
     min-height: 60px;
 }
+
+.formStyle{
+    width: 100%;
+    text-align: center;
+}
+/*@media (min-width: 992px){
+.col-md-offset-2 {
+     margin: auto; 
+}
+}*/
+
+.containerStyleTop{
+    color: gray;
+}
+
 
