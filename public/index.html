@@ -88,7 +88,7 @@
 
             </div>
             <div class="col-md-4">
-              <span class="label label-success">New!</span>
+                <span class="label label-success">New!</span>
 
                 <label class="checkbox-inline my-favs"><input type="checkbox" class="my-favs-input" value="">Show My Favorites!</label>
                 <label class="checkbox-inline my-recps"><input type="checkbox" class="my-recps-input" value="">Show My Recepies!</label>
@@ -110,18 +110,18 @@
     <!-- /.container -->
     <div class="jumbotron">
 
-    <div class="container">
-        <div class="row intro-row">
-            <div class="col-md-12">
-                <div class="page-header">
-                <h1>Eat Bean</h1>
+        <div class="container">
+            <div class="row intro-row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h1>Eat Bean</h1>
+                    </div>
+                    <img src="http://localhost:8000/hungry-eating.gif">
+                    <h3>Bean says: you better start cooking!</h3>
+                    <h3>Use the Search and get your hungry man some food!</h3>
                 </div>
-                <img src="http://localhost:8000/hungry-eating.gif">
-                <h3>Bean says: you better start cooking!</h3>
-                <h3>Use the Search and get your hungry man some food!</h3>
             </div>
         </div>
-    </div>
     </div>
     <div class="container">
 
@@ -163,7 +163,7 @@
                     <button class="btn btn-default add-favorite pull-right" type="btn">Send to Friend</button>
                     <h4><a href="{{imageRecipe}}" target="_blank">{{recipeName}}</a></h4>
                     <h4>Cooking Time: {{totalTimeInSeconds}}/hours</h4>
-                    <p>{{ingredients}}</p>
+                    <p class="ingre-p">{{ingredients}}</p>
                 </div>
                 <div class="ratings">
                     <p class="pull-right">{{rating}}</p>
@@ -174,27 +174,28 @@
 
 
     <script id="fav-recipe-template" type="text/x-handlebars-template">
-
         <div class="col-sm-4 col-lg-4 col-md-4">
-            <div class="thumbnail">
-                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                <span class='fav-title'>My Favorite Recipe!</span>
+            <div class="thumbnail fav-thumb" data-id='{{_id}}'>
                 <img src="{{recipeimage}}" alt="">
                 <div class="caption">
-                    <button class="btn btn-default add-favorite pull-right" type="btn">Remove Favorite</button>
+                    <button class="btn btn-primary remove-favorite pull-right" type="btn">Remove</button>
                     <h4><a href="http://www.yummly.co/recipe/{{recipeid}}" target="_blank">{{recipeName}}</a></h4>
                     <h4>Cooking Time: {{cookingtime}}/mins</h4>
-                    <p>{{ingredients}}</p>
-                    <p class="pull-right">User Rating: {{rating}}</p>
+                    <p class="ingre-p">{{ingredients}}</p>
+                </div>
+                <div class="ratings">
+                    <span class="glyphicon glyphicon-star pull-right"></span>
+                    <p class="pull-right">{{rating}}</p>
                     <p>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
+                        <p class="course">Course: {{course}}</p>
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
                     </p>
                 </div>
             </div>
+        </div>
     </script>
 
     <script id="recipe-template" type="text/x-handlebars-template">
@@ -202,19 +203,20 @@
             <div class="thumbnail">
                 <img src="{{recipeimage}}" alt="">
                 <div class="caption">
-                    <button class="btn btn-default add-favorite pull-right" type="btn">Add Favorite</button>
+                    <button class="btn btn-success add-favorite pull-right" type="btn">Save</button>
                     <h4><a href="http://www.yummly.co/recipe/{{recipeid}}" target="_blank">{{recipeName}}</a></h4>
                     <h4>Cooking Time: {{cookingtime}}/mins</h4>
-                    <p>{{ingredients}}</p>
+                    <p class="ingre-p">{{ingredients}}</p>
                 </div>
                 <div class="ratings">
+                    <span class="glyphicon glyphicon-star pull-right"></span>
                     <p class="pull-right">{{rating}}</p>
                     <p>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
+                        <p class="course">Course: {{course}}</p>
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
+                        <!--<span class="glyphicon glyphicon-star"></span>-->
                     </p>
                 </div>
             </div>

@@ -3,32 +3,32 @@ var FoodApp = function () {
     var foods = [];
     // var favs = []
 
-    var getmyFavorites = function(){
+    var getmyFavorites = function () {
         var favs = []
         $.ajax('/favrecipe', {
-        method: "GET",
-        success: function(data){
-            favs = data
-            renderFavs(favs)
-        },
+            method: "GET",
+            success: function (data) {
+                favs = data
+                renderFavs(favs)
+            },
             error: function (jqXHR, textStatus, errorThrown) {
-            alert('sry, you do not have favorites');
+                alert('sry, you do not have favorites');
             }
         })
     }
 
 
-    var getmyRecipes = function(){
+    var getmyRecipes = function () {
         var myrec = []
         $.ajax('/newrecipe', {
-        method: "GET",
-        success: function(data){
-            myrec = data
-            console.log(myrec)
-            renderMyRecipes(myrec)
-        },
+            method: "GET",
+            success: function (data) {
+                myrec = data
+                console.log(myrec)
+                renderMyRecipes(myrec)
+            },
             error: function (jqXHR, textStatus, errorThrown) {
-            alert('sry, you do not any recepies of your own!');
+                alert('sry, you do not any recepies of your own!');
             }
         })
     }
@@ -50,7 +50,7 @@ var FoodApp = function () {
         })
     }
 
-    var addRecipeOptions = function (recipeName, recipeimage, ingredients, rating, cookingtime, recipeid, cuisine) {
+    var addRecipeOptions = function (recipeName, recipeimage, ingredients, rating, cookingtime, recipeid, course) {
         var food = {
             recipeName: recipeName,
             recipeimage: recipeimage,
@@ -58,7 +58,8 @@ var FoodApp = function () {
             rating: rating,
             cookingtime: cookingtime,
             recipeid: recipeid,
-            cuisine: cuisine
+            // cuisine: cuisine,
+            course: course
         }
         foods.push(food);
         renderRecipes()
@@ -69,7 +70,7 @@ var FoodApp = function () {
         foods = []
         $.ajax({
             method: "GET",
-            url: 'http://api.yummly.com/v1/api/recipes?_app_id=06389aba&_app_key=5ac00c18990b0551a19a507887252268&q=' + [text] + [recipetosearch] + [veggieCheck] + [allergyCheck] + '&requirePictures=true',
+            url: 'http://api.yummly.com/v1/api/recipes?_app_id=06389aba&_app_key=5ac00c18990b0551a19a507887252268&q=' + [text] + [recipetosearch] + [veggieCheck] + [allergyCheck] + '&requirePictures=true&maxResult=20&start=20',
             success: function (data) {
                 for (var i = 0; i < data.matches.length; i++) {
                     var recipeName = data.matches[i].recipeName
@@ -78,10 +79,12 @@ var FoodApp = function () {
                     var rating = data.matches[i].rating
                     var cookingtime = data.matches[i].totalTimeInSeconds / 60
                     var recipeid = data.matches[i].id
-                    var cuisine = data.matches[i].attributes.cuisine
-                    
+                    // var cuisine = data.matches[i].attributes.cuisine[0]
+                    var course = data.matches[i].attributes.course[0]
+
+                    // var course = coursedraft.toString();
                     var ingredients = ing.toString();
-                    addRecipeOptions(recipeName, recipeimage, ingredients, rating, cookingtime, recipeid, cuisine)
+                    addRecipeOptions(recipeName, recipeimage, ingredients, rating, cookingtime, recipeid, course)
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -89,6 +92,19 @@ var FoodApp = function () {
             }
         });
     };
+
+    var removeFavorite = function (removeid) {
+        $.ajax({
+            type: "DELETE",
+            url: '/favrecipe/' + removeid,
+            data: (removeid),
+            success: function (result) {
+                //   posts[postIndex] = result
+                //   getmyFavorites()
+                alert('removed')
+            }
+        })
+    }
 
 
     var renderRecipes = function () {
@@ -105,13 +121,14 @@ var FoodApp = function () {
 
     var renderFavs = function (myfavs) {
         var favs = myfavs
+        console.log(favs)
         $('.favs-main-row').empty();
         var source = $('#fav-recipe-template').html();
         var template = Handlebars.compile(source);
-         for (var i = 0; i < favs.length; i++) {
+        for (var i = 0; i < favs.length; i++) {
             var newHTML = template(favs[i]);
             $('.favs-main-row').append(newHTML);
-         }
+        }
     }
 
     var renderMyRecipes = function (myrecp) {
@@ -119,10 +136,10 @@ var FoodApp = function () {
         $('.myrec-main-row').empty();
         var source = $('#my-recipe-template').html();
         var template = Handlebars.compile(source);
-         for (var i = 0; i < myrec.length; i++) {
+        for (var i = 0; i < myrec.length; i++) {
             var newHTML = template(myrec[i]);
             $('.myrec-main-row').append(newHTML);
-         }
+        }
     }
 
 
@@ -130,7 +147,8 @@ var FoodApp = function () {
         recipeSearch: recipeSearch,
         favRecipe: favRecipe,
         getmyFavorites: getmyFavorites,
-        getmyRecipes: getmyRecipes
+        getmyRecipes: getmyRecipes,
+        removeFavorite: removeFavorite
     }
 }
 
@@ -196,20 +214,18 @@ $('.allergy-check :checkbox').change(function () {
 $('.my-favs :checkbox').change(function () {
     if (this.checked) {
         app.getmyFavorites()
-        }
-     else { 
-         $('.favs-main-row').empty();
-     }
-    })
+    } else {
+        $('.favs-main-row').empty();
+    }
+})
 
 $('.my-recps :checkbox').change(function () {
     if (this.checked) {
         app.getmyRecipes()
-        }
-     else { 
-         $('.myrec-main-row').empty();
-     }
-    })
+    } else {
+        $('.myrec-main-row').empty();
+    }
+})
 
 var $maindisplay = $(".main-row");
 
@@ -220,4 +236,13 @@ $maindisplay.on('click', '.add-favorite', function () {
     var recipeIndex = $(this).closest('.recipe-inside').index()
     app.favRecipe(recipeIndex)
 
+})
+
+var $favDisplay = $('.favs-main-row');
+
+$favDisplay.on('click', '.remove-favorite', function () {
+    var favID = $(this).parents('.thumbnail').data().id
+    $(this).addClass(disabled = "disabled")
+    $(this).addClass('btn-success').html("Removed!");
+    // app.removeFavorite(removeID)
 })

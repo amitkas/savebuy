@@ -14,7 +14,8 @@ var FavRecipeSchema = new Schema({
   recipeid: String,
   rating: Number,
   cookingtime: Number,
-  cuisine: String
+  cuisine: String,
+  course: String
 });
 
 // var FavIngre = mongoose.model('favIngre', IngredientsSchema)
