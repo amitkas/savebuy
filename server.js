@@ -43,20 +43,15 @@ app.post('/newrecipe', function (req, res) {
   });
 });
 
+
 app.post('/favrecipe', function(req, res){
-   var recid = req.body.recipeid
-
-if ((FavRecipe.find({'recipeid': recid}).count()) == 0){
-  console.log('yes')
-}
-
 var newFavRecipe = new FavRecipe(req.body)
   newFavRecipe.save(function (err, data) {
     if (err) {
       return console.error(err)
     }
-    // console.log(data)
-    // res.send(data)
+    console.log(data)
+    res.send(data)
   })})
 
 app.get('/favrecipe', function(req, res){

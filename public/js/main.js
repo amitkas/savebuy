@@ -8,6 +8,9 @@ var FoodApp = function () {
         $.ajax('/favrecipe', {
             method: "GET",
             success: function (data) {
+                if(data.length==0){
+                    alert('sry, you do not have favorites')
+                }
                 favs = data
                 renderFavs(favs)
             },
