@@ -24,7 +24,6 @@ var FoodApp = function () {
             method: "GET",
             success: function (data) {
                 myrec = data
-                console.log(myrec)
                 renderMyRecipes(myrec)
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -37,7 +36,6 @@ var FoodApp = function () {
 
     var favRecipe = function (recipeIndex) {
         var recindex = foods[recipeIndex]
-        console.log(recindex)
         $.ajax('/favrecipe', {
             method: "POST",
             data: recindex,
@@ -109,7 +107,6 @@ var FoodApp = function () {
 
     var renderRecipes = function () {
         $('.main-row').empty();
-        console.log(foods)
         var source = $('#recipe-template').html();
         var template = Handlebars.compile(source);
         for (var i = 0; i < foods.length; i++) {
@@ -121,7 +118,6 @@ var FoodApp = function () {
 
     var renderFavs = function (myfavs) {
         var favs = myfavs
-        console.log(favs)
         $('.favs-main-row').empty();
         var source = $('#fav-recipe-template').html();
         var template = Handlebars.compile(source);
