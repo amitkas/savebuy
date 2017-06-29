@@ -74,13 +74,13 @@ var FoodApp = function () {
                 for (var i = 0; i < data.matches.length; i++) {
                     var recipeName = data.matches[i].recipeName
                     var recipeimage = data.matches[i].smallImageUrls[0]
-                    var ingredients = data.matches[i].ingredients
+                    var ing = data.matches[i].ingredients
                     var rating = data.matches[i].rating
                     var cookingtime = data.matches[i].totalTimeInSeconds / 60
                     var recipeid = data.matches[i].id
                     var cuisine = data.matches[i].attributes.cuisine
-
-
+                    
+                    var ingredients = ing.toString();
                     addRecipeOptions(recipeName, recipeimage, ingredients, rating, cookingtime, recipeid, cuisine)
                 }
             },
@@ -93,6 +93,7 @@ var FoodApp = function () {
 
     var renderRecipes = function () {
         $('.main-row').empty();
+        console.log(foods)
         var source = $('#recipe-template').html();
         var template = Handlebars.compile(source);
         for (var i = 0; i < foods.length; i++) {
@@ -114,7 +115,6 @@ var FoodApp = function () {
     }
 
     var renderMyRecipes = function (myrecp) {
-        debugger
         var myrec = myrecp
         $('.myrec-main-row').empty();
         var source = $('#my-recipe-template').html();
