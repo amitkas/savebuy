@@ -31,10 +31,10 @@
     display: block;
 }
 
-#submitForm {
-    /*margin-left: 50%;
-    top: 2px;*/
-}
+/*#submitForm {
+    margin-left: 50%;
+    top: 2px;
+}*/
 
 body {
     background: url("images/food_back.jpg") no-repeat center;
@@ -85,5 +85,6 @@ body {
 .containerStyleTop{
     color: gray;
 }
+
 
 

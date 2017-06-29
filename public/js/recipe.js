@@ -17,7 +17,8 @@ $(".btn-success").on('click', function () {
   newRecipe.ingredients = $("#recipeInstuctionsInput").val();
   newRecipe.imageRecipe = "http://www.edtechsummit.org.il/wp-content/uploads/2016/06/Faces-Logos-400-56.png";
   saveNewRecipe(newRecipe);
-
+  document.getElementById("formPeter").style.display="none";
+  document.body.style.background = "url('css/images/thank_you.jpg') no-repeat center fixed";
 });
 
 function saveNewRecipe(newRecipe) {
