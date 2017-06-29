@@ -57,57 +57,59 @@
     <!--<div class="col-md-offset-2 col-md-8 formDiv" id="topDiv">
         <h1 class="mainH">Bring your recipes</h1>
     </div>-->
-<div class="container containerStyleTop">
-    <div class="row ">
+    <div class="container containerStyleTop">
+        <div class="row ">
 
-        <div class="col-md-10 col-md-offset-1 formDiv">
-                    <div  id="topDiv">
-        <h1 class="mainH">Bring your recipes</h1>
-        </div>
-            <form class="formStyle">
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Recipe name</label>
-                    <input type="text" class="form-control" id="recipeNameInput" placeholder="Example input">
+            <div class="col-md-10 col-md-offset-1 formDiv">
+                <div id="topDiv">
+                    <h1 class="mainH">Bring your recipes</h1>
                 </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Recipe style</label>
-                    <p class="form-control">
-                    <select id='chose-cuisine' class="selectpicker cuisine-check " multiple>
+                <form class="formStyle">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Recipe name</label>
+                        <input type="text" class="form-control" id="recipeNameInput" placeholder="Example input">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Recipe style</label>
+                        <p class="form-control">
+                            <select id='chose-cuisine' class="selectpicker cuisine-check " multiple>
                         <option id="italian">Italian</option>
                         <option id="asian">Asian</option>
                         <option id="medi">Mediterranean</option>
                         <option id="mexican">Mexican</option>
                         <option id="japan">Japanese </option>
                     </select>
-                    </p>
-                </div>
-
-                <div class="form-group inputDescription1">
-                    <label for="formGroupExampleInput">Cooking Time</label>
-                    <div class="input-group clockpicker">
-                        <input type="text" class="form-control" value="00:01" id="cookingTimeInput">
-                        <span class="input-group-addon">
-                              <span class="glyphicon glyphicon-time"></span>
-                        </span>
+                        </p>
                     </div>
-                </div>
-                <div class="form-group formGroupExampleInputcss">
-                    <label for="formGroupExampleInput2">Recipes instructions</label>
-                    <input type="text" class="form-control" id="recipeInstuctionsInput" placeholder="Another input">
-                </div>
-                <div class="input-group selectFileClass">
-                    <!--<input type="file" class="form-control imageSourceInput">-->
-                    <!--<span class="input-group-addon"></span>-->
+
+                    <div class="form-group inputDescription1">
+                        <label for="formGroupExampleInput">Cooking Time</label>
+                        <div class="input-group clockpicker">
+                            <input type="text" class="form-control" value="00:01" id="cookingTimeInput">
+                            <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-time"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group formGroupExampleInputcss">
+                        <label for="formGroupExampleInput2">Recipes instructions</label>
+                        <input type="text" class="form-control" id="recipeInstuctionsInput" placeholder="Another input">
+                    </div>
+                    <!--<div class="input-group selectFileClass">
                     <label class="control-label">Select File</label>
                     <input id="imageSourceInput1" type="file" class="file file-preview-text">
-                </div>
-                <div class="row">
-                    <button type="button" class="btn btn-success" id="submitForm">Submit</button>
-                </div>
-            </form>
+                </div>-->
+                    <div class="input-group selectFileClass">
+                        <label class="control-label">Select File</label>
+                        <input id="imageSourceInput1" type="file" class="form-control">
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn btn-success" id="submitForm">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
     <!--//main js-->
 

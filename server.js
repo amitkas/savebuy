@@ -6,10 +6,10 @@ mongoose.connect('mongodb://localhost/savebuy', function () {
   console.log("DB connection established!!!");
 })
 
-
 var Recipe = require('./addRecpies/models/recipeModel');
 var FavRecipe = require('./addRecpies/models/favModel');
-
+var multer = require('multer'),
+	path = require('path');
 
 var app = express();
 app.use(express.static('public'));
@@ -20,7 +20,8 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
-
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 app.get("/recipe.html", function(req, res){
   res.sendFile(__dirname+'/addRecpies/recipe.html')
@@ -71,6 +72,11 @@ app.get('/newrecipe', function(req, res){
   });
 })
 
+app.get('/newFile', function(req, res){
+  res.render('index');
+});
+
 app.listen(8000, function () {
   console.log("what do you want from me! get me on 8000 ;-)");
 });
+
