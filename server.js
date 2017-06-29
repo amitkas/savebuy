@@ -44,12 +44,17 @@ app.post('/newrecipe', function (req, res) {
 });
 
 app.post('/favrecipe', function(req, res){
+  //  var recid = req.body.recipeid
+
+  // var findthis = FavRecipe.find({ recipeid: recid })
+  // console.log(findthis)
+
 var newFavRecipe = new FavRecipe(req.body)
   newFavRecipe.save(function (err, data) {
     if (err) {
       return console.error(err)
     }
-    console.log(data)
+    // console.log(data)
     // res.send(data)
   })})
 
@@ -74,6 +79,27 @@ app.get('/newrecipe', function(req, res){
 
 app.get('/newFile', function(req, res){
   res.render('index');
+});
+
+
+
+app.delete('/favrecipe/:removeid', function (req, res) {
+  var removeid = req.params.removeid;
+  console.log(removeid)
+  FavRecipe.findById(removeid, function (err, data) {
+    if (err) {
+      throw err
+    }; {
+          data.remove(function (err, success) {
+        if (err) {
+          throw err
+        }; {
+          console.log('found and removed!')
+        }
+      })
+    }
+  });
+  res.send()
 });
 
 app.listen(8000, function () {

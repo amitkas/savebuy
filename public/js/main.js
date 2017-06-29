@@ -101,8 +101,8 @@ var FoodApp = function () {
             data: (removeid),
             success: function (result) {
                 //   posts[postIndex] = result
-                //   getmyFavorites()
-                alert('removed')
+                  getmyFavorites()
+                // alert('removed')
             }
         })
     }
@@ -243,5 +243,6 @@ $favDisplay.on('click', '.remove-favorite', function () {
     var favID = $(this).parents('.thumbnail').data().id
     $(this).addClass(disabled = "disabled")
     $(this).addClass('btn-success').html("Removed!");
-    // app.removeFavorite(removeID)
+
+    app.removeFavorite(favID)
 })
