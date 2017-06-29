@@ -11,7 +11,10 @@ var FavRecipeSchema = new Schema({
   recipeName: String,
   recipeimage: String,
   ingredients: String,
-  recipeid: String,
+  recipeid: {
+        type: String,
+        unique: true
+      },
   rating: Number,
   cookingtime: Number,
   cuisine: String,
