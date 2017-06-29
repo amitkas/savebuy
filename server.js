@@ -78,9 +78,9 @@ app.get('/newrecipe', function(req, res){
   });
 })
 
-app.get('/newFile', function(req, res){
-  res.render('index');
-});
+// app.get('/newFile', function(req, res){
+//   res.render('index');
+// });
 
 
 
