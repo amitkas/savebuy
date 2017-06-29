@@ -70,6 +70,9 @@ var FoodApp = function () {
             method: "GET",
             url: 'http://api.yummly.com/v1/api/recipes?_app_id=06389aba&_app_key=5ac00c18990b0551a19a507887252268&q=' + [text] + [recipetosearch] + [veggieCheck] + [allergyCheck] + '&requirePictures=true&maxResult=20&start=20',
             success: function (data) {
+                if (data.matches.length == 0){
+                    alert('sorry! We could not find any recipe to match your request')
+                }
                 for (var i = 0; i < data.matches.length; i++) {
                     var recipeName = data.matches[i].recipeName
                     var recipeimage = data.matches[i].smallImageUrls[0]
@@ -160,6 +163,7 @@ var addVeggie
 
 $input.on('click', '.search-recipes', function () {
     var $freesearch = $('.search-input');
+
     if ($freesearch.val() === "" || $freesearch.val() === "") {
         alert("Please enter an idea for recipe!");
         return;
@@ -180,6 +184,10 @@ $input.on('click', '.search-recipes', function () {
 
     var veggieCheck = $('.veggie-input').attr('value')
     var allergyCheck = $('.allergy-input').attr('value')
+
+    $freesearch.val('')
+    $freesearch.attr("placeholder", "Search any recipe here");
+
     app.recipeSearch(freeSearch, recipetosearch, veggieCheck, allergyCheck)
 })
 
