@@ -155,18 +155,16 @@
 
     <script id="my-recipe-template" type="text/x-handlebars-template">
         <div class="col-sm-4 col-lg-4 col-md-4 recipe-inside">
-            <div class="thumbnail">
-                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                <span class='fav-title'>My Own Recipe!</span>
-                <img src="{{recipeimage}}" alt="">
+            <div class="thumbnail my-thumb">
+                <img src="{{imageRecipe}}" alt="">
                 <div class="caption">
                     <button class="btn btn-default add-favorite pull-right" type="btn">Send to Friend</button>
-                    <h4><a href="{{imageRecipe}}" target="_blank">{{recipeName}}</a></h4>
+                    <h4>{{recipeName}}</h4>
                     <h4>Cooking Time: {{totalTimeInSeconds}}/hours</h4>
-                    <p class="ingre-p">{{ingredients}}</p>
+                    <p class="course">{{cuisine}}</p>
+                    <p>{{ingredients}}</p>
                 </div>
                 <div class="ratings">
-                    <p class="pull-right">{{rating}}</p>
                 </div>
             </div>
         </div>
