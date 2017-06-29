@@ -19,11 +19,11 @@ newRecipe.totalTimeInSeconds=$("#cookingTimeInput").val();
 // newRecipe.cuisine=newCuisine;
 newRecipe.cuisine='mexican';
 newRecipe.ingredients=$("#recipeInstuctionsInput").val();
-newRecipe.imageRecipe=$("#imageSourceInput1").val();
-newRecipe.file=$("#imageSourceInput1").val();
-// newRecipe.imageRecipe="C:\Users\dvir\Desktop\db music";
+// newRecipe.imageRecipe=$("#imageSourceInput1").val();
+// newRecipe.file=$("#imageSourceInput1").val();
+newRecipe.imageRecipe="http://www.edtechsummit.org.il/wp-content/uploads/2016/06/Faces-Logos-400-56.png";
 console.log(newRecipe);
-// saveNewRecipe(newRecipe);
+saveNewRecipe(newRecipe);
 
 });
 
@@ -40,21 +40,3 @@ console.log(newRecipe);
     })
   }
 
-app.post('/newFile', multer({ dest: './uploads/'}).single('upl'), function(req,res){
-	console.log(req.body); //form fields
-	/* example output:
-	{ title: 'abc' }
-	 */
-	console.log(req.file); //form files
-	/* example output:
-            { fieldname: 'upl',
-              originalname: 'grumpy.png',
-              encoding: '7bit',
-              mimetype: 'image/png',
-              destination: './uploads/',
-              filename: '436ec561793aa4dc475a88e84776b1b9',
-              path: 'uploads/436ec561793aa4dc475a88e84776b1b9',
-              size: 277056 }
-	 */
-	res.status(204).end();
-});
