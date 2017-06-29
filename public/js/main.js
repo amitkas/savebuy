@@ -78,9 +78,12 @@ var FoodApp = function () {
                     var cookingtime = data.matches[i].totalTimeInSeconds / 60
                     var recipeid = data.matches[i].id
                     // var cuisine = data.matches[i].attributes.cuisine[0]
-                    var course = data.matches[i].attributes.course[0]
-
-                    // var course = coursedraft.toString();
+                    var cour = data.matches[i].attributes.course
+                    if (cour !== undefined) {
+                    var course = cour.toString();
+                    } else {
+                        course = []
+                    }
                     var ingredients = ing.toString();
                     addRecipeOptions(recipeName, recipeimage, ingredients, rating, cookingtime, recipeid, course)
                 }
