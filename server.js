@@ -27,7 +27,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.get("/recipe.html", function(req, res){
-  res.sendFile('/addRecpies/recipe.html')
+  res.sendFile(__dirname+'/addRecpies/recipe.html')
 })
 
 app.get("/hungry-eating.gif", function(req, res){
