@@ -27,11 +27,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.get("/recipe.html", function(req, res){
-  res.sendFile(__dirname+'/addRecpies/recipe.html')
+  res.sendFile('/addRecpies/recipe.html')
 })
 
 app.get("/hungry-eating.gif", function(req, res){
-  res.sendFile(__dirname+'/hungry-eating.gif/')
+  res.sendFile('/hungry-eating.gif/')
 })
 
 app.post('/newrecipe', function (req, res) {
@@ -103,7 +103,7 @@ app.delete('/favrecipe/:removeid', function (req, res) {
 
 app.listen(process.env.PORT || '8080');
 
-// app.listen(8000, function () {
+// app.listen(8000, funsction () {
 //   console.log("what do you want from me! get me on 8000 ;-)");
 // });
 
